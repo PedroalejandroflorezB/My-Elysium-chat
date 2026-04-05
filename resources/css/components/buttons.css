@@ -1,0 +1,67 @@
+/* ==========================================
+   BOTONES REUTILIZABLES
+   ========================================== */
+
+.btn-primary {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+    color: var(--background);
+    border: none;
+    border-radius: 999px;    /* 🟣 Pill */
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(133, 173, 255, 0.4);
+}
+
+.btn-secondary {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--surface-high);
+    color: var(--on-surface);
+    border: 1px solid var(--outline);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--surface-highest);
+}
+
+.btn-danger {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(255, 180, 171, 0.1);
+    color: var(--error);
+    border: 1px solid var(--error);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-danger:hover {
+    background: rgba(255, 180, 171, 0.2);
+}
+
+.btn-success {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--secondary) 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 999px;    /* 🟣 Pill */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}

@@ -1,0 +1,88 @@
+/* ==========================================
+   ONBOARDING
+   ========================================== */
+
+.onboarding-container {
+    position: fixed;
+    inset: 0;
+    background: var(--background);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    height: 100vh;
+}
+
+.onboarding-modal {
+    background: var(--surface);
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+}
+
+.onboarding-skip {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: transparent;
+    border: none;
+    color: var(--on-surface-variant);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.onboarding-skip:hover {
+    color: var(--primary);
+}
+
+.onboarding-progress {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.progress-dot {
+    flex: 1;
+    height: 4px;
+    background: var(--outline-variant);
+    border-radius: var(--radius-full);
+    transition: all 0.3s;
+}
+
+.progress-dot.active {
+    background: var(--primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.onboarding-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(133, 173, 255, 0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.onboarding-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.onboarding-text {
+    text-align: center;
+    color: var(--on-surface-variant);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}

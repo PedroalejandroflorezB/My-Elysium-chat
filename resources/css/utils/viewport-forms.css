@@ -1,0 +1,77 @@
+/* ==========================================
+   UTILIDADES VIEWPORT - Formularios Responsivos
+   ========================================== */
+
+/* Clase para contenedores que deben respetar el viewport */
+.viewport-container {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+/* Clase específica para formularios */
+.viewport-form {
+    max-height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Para modales que deben respetar el viewport */
+.viewport-modal {
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewport-modal .modal-body {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-height: 600px) {
+    .viewport-form,
+    .viewport-modal {
+        max-height: 95vh;
+    }
+    
+    .auth-card {
+        max-height: 95vh;
+    }
+    
+    .modal-content {
+        max-height: 95vh;
+    }
+}
+
+/* Para pantallas muy altas */
+@media (min-height: 800px) {
+    .viewport-form {
+        max-height: 500px; /* Limitar en pantallas grandes */
+    }
+    
+    .auth-card {
+        max-height: 500px;
+    }
+    
+    .modal-content {
+        max-height: 500px;
+    }
+}
+
+/* Utilidad para centrado vertical seguro */
+.safe-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+@media (max-height: 600px) {
+    .safe-center {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+}

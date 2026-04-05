@@ -1,0 +1,19 @@
+/* ==========================================
+   LAYOUT PRINCIPAL - 100vh
+   ========================================== */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}

@@ -1,0 +1,691 @@
+/* ==========================================
+   MODALES - ESTILOS GENERALES (Elysium)
+   ========================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    padding: 1.5rem;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* CONTAINER - Dimensiones recicladas de auth.css y welcome.blade.php */
+.modal-content {
+    position: relative;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 350px;  /* ✅ Reciclado de auth-card y contact-container */
+    height: auto;
+    overflow: hidden;
+    animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content--compact {
+    max-width: 320px;
+}
+
+/* HEADER - Dimensiones recicladas */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.25rem 1rem 1.25rem;  /* ✅ Reciclado de auth-card padding */
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.125rem;  /* ✅ Reciclado de auth-title */
+    font-weight: 800;     /* ✅ Reciclado de auth-title */
+    color: var(--text-primary);
+    font-family: 'Manrope', -apple-system, sans-serif;  /* ✅ Reciclado de auth-title */
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.modal-close {
+    background: var(--glass-bg);
+    border: none;
+    color: var(--text-muted);
+    width: 40px;      /* ✅ Tamaño estándar */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    position: absolute;
+    top: 1rem;        /* ✅ Posición estándar */
+    right: 1rem;      /* ✅ Posición estándar */
+}
+
+.modal-close:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    /* ✅ SIN transform: rotate() - animación removida */
+}
+
+/* BODY - Dimensiones recicladas */
+.modal-body {
+    padding: 1rem 1.25rem 1.5rem 1.25rem;  /* ✅ Reciclado de auth-card padding */
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;  /* ✅ Reciclado de auth-form gap */
+}
+
+.modal-body--no-scroll {
+    overflow: hidden;
+}
+
+/* FORMULARIO DE CONTACTO - Dimensiones recicladas */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;  /* ✅ Reciclado de input-group margin-bottom */
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;  /* ✅ Reciclado de form-group gap */
+}
+
+.contact-form .form-label {
+    font-size: 0.8125rem;  /* ✅ Reciclado de label font-size */
+    font-weight: 700;      /* ✅ Reciclado de label font-weight */
+    color: var(--primary); /* ✅ Reciclado de label color */
+    text-transform: uppercase;  /* ✅ Reciclado de label text-transform */
+    letter-spacing: 2px;        /* ✅ Reciclado de label letter-spacing */
+    margin: 0;
+    margin-bottom: 0.375rem;    /* ✅ Reciclado de label margin-bottom */
+}
+
+.contact-form .form-input,
+.contact-form .form-textarea {
+    width: 100%;
+    padding: 0.6875rem 0.875rem;  /* ✅ Reciclado de form-input padding */
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.875rem;  /* ✅ Reciclado de form-input font-size */
+    font-family: inherit;
+    transition: var(--transition);
+    box-sizing: border-box;
+    min-height: 44px;     /* ✅ Reciclado de form-input min-height */
+}
+
+.contact-form .form-textarea {
+    resize: vertical;
+    min-height: 80px;     /* ✅ Reciclado de textarea min-height */
+    max-height: 120px;    /* ✅ Reciclado de textarea max-height */
+}
+
+.contact-form .form-input:focus,
+.contact-form .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: var(--input-focus-glow);
+}
+
+.contact-form .form-input::placeholder,
+.contact-form .form-textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.contact-form .btn-submit {
+    width: 100%;
+    padding: 0.6875rem 0.875rem;  /* ✅ Reciclado de auth-btn padding */
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;  /* ✅ Reciclado de auth-btn font-size */
+    font-weight: 600;     /* ✅ Reciclado de auth-btn font-weight */
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.375rem; /* ✅ Reciclado de welcome.blade.php button margin */
+    min-height: 44px;     /* ✅ Reciclado de auth-btn min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form .btn-submit:hover {
+    transform: translateY(-2px);  /* ✅ Reciclado de auth-btn-primary hover */
+    box-shadow: var(--shadow-glow);
+}
+
+/* AVATAR SECTION - Dimensiones recicladas */
+.profile-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;  /* ✅ Reciclado de auth-header margin-bottom */
+}
+
+.profile-avatar-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.profile-avatar-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--bg-secondary);
+    box-shadow: var(--input-focus-glow);
+    overflow: hidden;
+}
+
+.profile-avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-avatar-initials {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: var(--shadow-sm);
+}
+
+.avatar-change-btn {
+    background: var(--primary);
+    border: 2px solid var(--bg-secondary);
+    color: white;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+}
+
+.avatar-change-btn:hover {
+    background: var(--primary-container);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--shadow-glow);
+}
+
+.avatar-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* FORM FIELDS - Dimensiones recicladas */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;  /* ✅ Reciclado de auth-form gap */
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;  /* ✅ Reciclado de form-group gap */
+}
+
+.profile-field label {
+    font-size: 0.8125rem;  /* ✅ Reciclado de form-label font-size */
+    font-weight: 600;      /* ✅ Reciclado de form-label font-weight */
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-left: 0.25rem;
+    margin: 0;
+}
+
+.profile-input {
+    width: 100%;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.6875rem 0.875rem;  /* ✅ Reciclado de form-input padding */
+    color: var(--text-primary);
+    font-size: 0.875rem;  /* ✅ Reciclado de form-input font-size */
+    transition: var(--transition);
+    box-sizing: border-box;
+    min-height: 44px;     /* ✅ Reciclado de form-input min-height */
+}
+
+.profile-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--bg-hover);
+    box-shadow: var(--input-focus-glow);
+}
+
+.profile-input[readonly] {
+    cursor: default;
+    background: var(--bg-tertiary);
+}
+
+/* ACTIONS - Dimensiones recicladas */
+.profile-actions {
+    display: flex;
+    gap: 0.875rem;  /* ✅ Reciclado de auth-form gap */
+    margin-top: 1.25rem;  /* ✅ Reciclado de auth-footer margin-top */
+    padding-top: 0.875rem;  /* ✅ Reciclado de auth-footer padding-top */
+    border-top: 1px solid var(--border-subtle);
+}
+
+.btn {
+    flex: 1;
+    padding: 0.6875rem 1rem;  /* ✅ Reciclado de auth-btn padding */
+    border-radius: 8px;
+    font-size: 0.875rem;  /* ✅ Reciclado de auth-btn font-size */
+    font-weight: 600;     /* ✅ Reciclado de auth-btn font-weight */
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    border: none;
+    min-height: 44px;     /* ✅ Reciclado de auth-btn min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn--primary {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+.btn--primary:hover {
+    transform: translateY(-2px);  /* ✅ Reciclado de auth-btn-primary hover */
+    box-shadow: var(--shadow-glow);
+}
+
+.btn--secondary {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn--secondary:hover {
+    background: var(--bg-tertiary);
+}
+
+/* Responsive - Dimensiones recicladas */
+@media (max-width: 480px) {
+    .modal-overlay {
+        align-items: center;
+        padding: 1rem;  /* ✅ Reciclado de auth body padding */
+    }
+
+    .modal-content {
+        max-width: 100%;  /* ✅ Reciclado de auth-card max-width */
+        border-radius: 12px;
+    }
+    
+    .modal-header {
+        padding: 1.25rem 1rem 1rem 1rem;  /* ✅ Reciclado de auth-card padding responsive */
+    }
+    
+    .modal-body {
+        padding: 1rem 1rem 1.25rem 1rem;  /* ✅ Reciclado de auth-card padding responsive */
+        gap: 0.875rem;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        gap: 0.875rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.875rem;  /* ✅ Reciclado responsive button padding */
+        font-size: 1rem;    /* ✅ Reciclado responsive font-size */
+        height: 48px;
+    }
+
+    .contact-form .form-input,
+    .contact-form .form-textarea,
+    .contact-form .btn-submit {
+        font-size: 16px; /* ✅ Reciclado - Previene zoom en iOS */
+    }
+}
+
+@media (max-height: 600px) {
+    .modal-header {
+        padding: 1rem 1rem 0.75rem 1rem;  /* ✅ Reciclado de auth responsive height */
+    }
+    
+    .modal-body {
+        padding: 0.875rem 1rem 1rem 1rem;  /* ✅ Reciclado de auth responsive height */
+        gap: 0.75rem;  /* ✅ Reciclado de auth-form gap responsive */
+    }
+    
+    .contact-form {
+        gap: 0.75rem;  /* ✅ Reciclado de auth-form gap responsive */
+    }
+    
+    .contact-form .form-textarea {
+        min-height: 60px;
+        max-height: 80px;
+    }
+}
+
+/* Modal container para display:flex inline styles */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 1.5rem;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+}
+
+.modal .modal-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================
+   MODAL DE PERFIL - DISEÑO CONSISTENTE
+   ========================================== */
+
+#profile-modal .modal {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#profile-modal .modal > .modal {
+    position: relative;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 350px;
+    animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+/* Header con icono */
+#profile-modal .modal-header {
+    padding: 2rem 2rem 1rem 2rem;
+    text-align: center;
+    border-bottom: none;
+}
+
+#profile-modal .modal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#profile-modal .modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Body del modal */
+#profile-modal .modal-body {
+    padding: 0 2rem;
+}
+
+/* Avatar Section Mejorada */
+#profile-modal .profile-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+#profile-modal .profile-avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+#profile-modal .profile-avatar-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    position: relative;
+}
+
+#profile-modal .profile-avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#profile-modal .profile-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+}
+
+#profile-modal .profile-avatar-placeholder svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+#profile-modal .avatar-change-btn {
+    background: var(--primary);
+    border: 2px solid var(--bg-secondary);
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+}
+
+#profile-modal .avatar-change-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+#profile-modal .avatar-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Form Fields Mejorados */
+#profile-modal .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#profile-modal .profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#profile-modal .profile-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+#profile-modal .profile-input-wrapper {
+    position: relative;
+}
+
+#profile-modal .profile-input {
+    width: 100%;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+#profile-modal .profile-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: var(--input-focus-glow);
+}
+
+#profile-modal .profile-input[readonly] {
+    cursor: default;
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+}
+
+/* Footer con botones */
+#profile-modal .modal-footer {
+    padding: 1rem 2rem 2rem 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+#profile-modal .modal-footer .btn {
+    padding: 0.65rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+}
+
+#profile-modal .btn-secondary {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+#profile-modal .btn-secondary:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-subtle);
+}
+
+#profile-modal .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+#profile-modal .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #profile-modal .modal-header {
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    }
+    
+    #profile-modal .modal-body {
+        padding: 0 1.5rem;
+    }
+    
+    #profile-modal .modal-footer {
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+        flex-direction: column;
+    }
+    
+    #profile-modal .modal-footer .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
