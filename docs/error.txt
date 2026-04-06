@@ -1,0 +1,31 @@
+﻿node : C:\elysium-p2p\resou
+rces\js\components\sidebar.
+js:348
+En línea: 1 Carácter: 96
++ ... f8 error.txt; node 
+-c resources/js/components/
+sidebar.js 2>&1 | Out-F ...
++                   ~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (C:\  
+  elysium-p2p\...\sideba   
+ r.js:348:String) [], R    
+emoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+            
+tabCounterEl.textContent = 
+\`(\${count})\`;
+                           
+            ^
+
+SyntaxError: Invalid or 
+unexpected token
+    at checkSyntax (node:in
+ternal/main/check_syntax:72
+:5)
+
+Node.js v24.14.1
